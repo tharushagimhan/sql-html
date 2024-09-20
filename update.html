@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: 0 auto;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #diplomaID{
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main_Title">Insert Student</h1>
+    <form action="insert.php" method="post">
+        <input type="hidden" value="<?php echo $id; ?>">
+        <label for="StudentName">StudentName:</label><br>
+        <input type="text" id="StudentName" name="StudentName" required><br>
+
+        <label for="dob">BirthDay:</label><br>
+        <input type="date" id="dob" name="dob"><br>
+
+ 
+        <label for="Email">Email:</label><br>
+        <input type="text" id="Email" name="Email"><br>
+
+ 
+        <label for="ModuleCode">ModuleCode:</label><br>
+        <input type="text" id="ModuleCode" name="ModuleCode"><br>
+
+
+        <label for="DiplomaID">Diploma ID:</label><br>
+        <select id="diplomaID" name="DiplomaID">
+        <option>DIP001</option>
+        <option>DIP002</option>
+        <option>DIP003</option>
+        <option>DIP004</option>
+        <option>DIP005</option>
+      </select><br><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

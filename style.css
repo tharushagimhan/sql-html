@@ -1,0 +1,30 @@
+
+.heading {
+    padding:70px;
+    position:relative;
+    background-color: #333;
+}
+
+.heading h1 {
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+}
+
+#container {
+    padding: 150px;
+    position: relative;
+    background-color: #fff;
+
+}
+/*
+ Button Container */
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    background-color: rgb(203, 58, 58);
+    width: 100%;
+}
+*/

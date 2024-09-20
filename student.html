@@ -1,0 +1,82 @@
+<?php
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname = "module_system";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT stuname,Bdate,email,diplomaID,modulecode,stuID FROM student";
+$result = $conn->query($sql);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #fff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #fff;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exam results</h1>
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <th>Student ID</th>
+            <th>Birth Day</th>
+            <th>Email</th>
+            <th>Diploma ID</th>
+            <th>Module Code</th>
+
+        </tr>
+
+        <?php
+
+        if ($result->num_rows > 0) {
+
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>
+                        <td>" . $row["stuname"] . "</td>
+                        <td>" . $row["stuID"] . "</td>
+                        <td>" . $row["Bdate"] . "</td>
+                        <td>" . $row["email"] . "</td>
+                        <td>" . $row["diplomaID"] . "</td>
+                        <td>" . $row["modulecode"] . "</td>
+                    </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='7'>No records found</td></tr>";
+        }
+
+        // Close the database connection
+        $conn->close();
+        ?>
+    </table>
+</body>
+</html>
